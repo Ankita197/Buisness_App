@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".dashboard.subfragment.MainJobDetailFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+         <ImageView
+             android:id="@+id/ivBackGround"
+             android:layout_width="match_parent"
+             android:layout_height="130dp"
+             android:layout_marginTop="10dp"
+             android:scaleType="centerCrop"
+             android:src="@drawable/background_image"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+          android:layout_marginStart="10dp"
+          android:layout_marginTop="12dp"
+          android:layout_width="24dp"
+          android:layout_height="24dp"
+          android:src="@drawable/back_icon"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+         <TextView
+             android:id="@+id/tvCompany"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="20dp"
+             android:layout_marginBottom="3dp"
+             android:text="Junior Software Engineer"
+             android:textColor="@android:color/white"
+             android:textSize="16sp"
+             app:layout_constraintBottom_toTopOf="@+id/tvMainCompany"
+             app:layout_constraintStart_toStartOf="@+id/ivBackGround" />
+
+         <TextView
+             android:id="@+id/tvMainCompany"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="20dp"
+             android:layout_marginBottom="3dp"
+             android:text="Tcs Consultancy Private Limited"
+             android:textColor="@android:color/white"
+             android:textSize="12sp"
+             app:layout_constraintBottom_toTopOf="@+id/tvLocation"
+             app:layout_constraintStart_toStartOf="@+id/ivBackGround" />
+
+         <TextView
+             android:id="@+id/tvLocation"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="20dp"
+             android:layout_marginBottom="3dp"
+             android:text="Rajkot"
+             android:textColor="@android:color/white"
+             android:textSize="12sp"
+             app:layout_constraintBottom_toTopOf="@+id/tvPackageInfo"
+             app:layout_constraintStart_toStartOf="@+id/ivBackGround" />
+
+         <TextView
+             android:id="@+id/tvPackageInfo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="20dp"
+             android:layout_marginBottom="5dp"
+             android:text="Rs 1.5L - 3L"
+             android:textColor="@android:color/white"
+             android:textSize="12sp"
+             app:layout_constraintBottom_toBottomOf="@+id/ivBackGround"
+             app:layout_constraintStart_toStartOf="@+id/ivBackGround" />
+
+         <TextView
+             android:id="@+id/tvJobDescription"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:padding="10dp"
+             android:text="Job Description"
+             android:textColor="@android:color/black"
+             android:textSize="14sp"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/ivBackGround" />
+
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="@color/colorGray"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvJobDescription" />
+
+         <TextView
+             android:id="@+id/tvAboutJob"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="@string/about_job"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvJobDescription" />
+
+         <TextView
+             android:id="@+id/tvNoOfOpening"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="no of opening:\n 2"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvAboutJob" />
+
+         <TextView
+             android:id="@+id/tvJobType"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="job type:\n Full Time Job"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvNoOfOpening" />
+
+         <TextView
+             android:id="@+id/tvIndustryType"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="Industry Type:\n IT-Software-Software Services"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvJobType" />
+
+         <TextView
+             android:id="@+id/tvDesiredCandidateProfile"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:padding="10dp"
+             android:text="Desired Candidate Profile"
+             android:textColor="@android:color/black"
+             android:textSize="14sp"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvIndustryType" />
+
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="@color/colorGray"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvDesiredCandidateProfile" />
+
+         <TextView
+             android:id="@+id/tvCandidateProfileDescription"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="Basic Qualifications:\n
+MS or BS degree in Computer Science or other related fields, with 0 - 1 year of experience. Strong communication skills."
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvDesiredCandidateProfile" />
+
+         <TextView
+             android:id="@+id/tvSkills"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="Skills:\n
+- C#, AngularJS, JavaScript, HTML, CSS, JQuery, Bootstrap, ASP.Net MVC"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvCandidateProfileDescription" />
+
+         <TextView
+             android:id="@+id/tvTrainingPeriod"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:text="Training Period:\n
+- Candidate will need a personal laptop to work with during the lock-down
+- All Saturdays will be working
+- Candidate will have a total 4 leaves during the training period"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvSkills" />
+
+         <TextView
+             android:id="@+id/tvCompanyProfile"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp"
+             android:padding="10dp"
+             android:text="Company Profile"
+             android:textColor="@android:color/black"
+             android:textSize="14sp"
+             android:textStyle="bold"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvTrainingPeriod" />
+
+         <View
+             android:layout_width="match_parent"
+             android:layout_height="1dp"
+             android:background="@color/colorGray"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvCompanyProfile" />
+
+         <TextView
+             android:id="@+id/tvCompanyProfileDescription"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginTop="10dp"
+             android:layout_marginEnd="10dp"
+             android:paddingBottom="10dp"
+             android:text="TSS Consultancy Pvt. Ltd. is 10 years old fast-growing technology solutions provider for the financial industry, with a focus on building innovative products for financial institutions with a focus on compliance and operations. Here are some highlights about us.
+We take pride in the fact that we are a product company, which makes it technically more challenging for our engineers to build scalable and extensible system
+We are a FinTech company (Finance domain), and we have customers in multiple countries
+You may get a chance to work on latest technologies such as Machine Learning
+You will be doing Full Stack development (front end using AngularJS, service side using restful APIs in .Net, and SQL Server backend)
+We reward merit over experience"
+             android:textSize="12sp"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/tvCompanyProfile" />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

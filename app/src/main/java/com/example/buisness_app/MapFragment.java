@@ -107,7 +107,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     private void setItemClick() {
         itemListAdapter.setClick(new ItemOnClick() {
             @Override
-            public void OnClick(int position, ItemListAdapter.ItemHolder holder) {
+            public void OnClick(int position, RecyclerView.ViewHolder holder) {
                 behavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
                 startActivity(new Intent(getActivity(),ItemDetailsActivity.class));
             }

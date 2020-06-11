@@ -18,6 +18,7 @@ public class ItemMainJobAdapter extends RecyclerView.Adapter<ItemMainJobAdapter.
 
     private Context context;
     private ArrayList<ItemMainJob> itemMainJobArrayList;
+    private ItemOnClick itemOnClick;
 
     public ItemMainJobAdapter(Context context, ArrayList<ItemMainJob> itemMainJobArrayList) {
         this.context = context;
@@ -32,14 +33,22 @@ public class ItemMainJobAdapter extends RecyclerView.Adapter<ItemMainJobAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemMainJobHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ItemMainJobHolder holder, final int position) {
         ItemMainJob itemMainJob=itemMainJobArrayList.get(position);
         holder.tvJobTitle.setText(itemMainJob.getJobTitle());
         holder.tvJobDescription.setText(itemMainJob.getJobDescription());
         holder.tvJobPostedPn.setText("Job Posted On  "+itemMainJob.getJobPostedOn());
         holder.tvLastDateToApply.setText("Last Date to Apply "+itemMainJob.getLastDateToApply());
         holder.tvNoOfVacancy.setText("No Of Vacancy "+String.valueOf(itemMainJob.getNoOfVacancy()));
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemOnClick.OnClick(position,holder);
+            }
+        });
+    }
+    public void setClick(ItemOnClick itemOnClick){
+        this.itemOnClick=itemOnClick;
     }
 
     @Override

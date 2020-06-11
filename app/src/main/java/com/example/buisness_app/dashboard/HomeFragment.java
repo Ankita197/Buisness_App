@@ -72,6 +72,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onPageItemClick(int page, int position, String tag, DataItem item) {
                 getFragmentManager().beginTransaction().replace(R.id.container,new TabsLoadFragment(),"tabs load fragment")
+                        .addToBackStack(null)
                         .commit();
             }
         });

@@ -33,7 +33,6 @@ public class TabsLoadFragment extends Fragment {
         viewPager.setAdapter(tabChangeAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tlItem));
         setOnTabSelect();
-        switchFragment(new ListFragMent(),"list Fragment");
         tlItem.setSelected(true);
         return view;
     }
@@ -47,14 +46,6 @@ public class TabsLoadFragment extends Fragment {
         TabLayout.Tab thirdTab = tlItem.newTab();
         thirdTab.setText("jobs"); // set the Text for the third Tab
         tlItem.addTab(thirdTab);
-    }
-
-    private void switchFragment(Fragment fragment,String fragmentId) {
-        FragmentManager fragmentManager = getChildFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, fragment, fragmentId)
-                .addToBackStack(fragmentId);
-        fragmentTransaction.commit();
     }
 
     private void setOnTabSelect() {

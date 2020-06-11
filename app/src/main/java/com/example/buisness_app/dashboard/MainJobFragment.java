@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buisness_app.R;
 import com.example.buisness_app.adapter.ItemMainJobAdapter;
+import com.example.buisness_app.adapter.ItemOnClick;
+import com.example.buisness_app.dashboard.subfragment.MainJobDetailFragment;
 import com.example.buisness_app.model.ItemMainJob;
 
 import java.util.ArrayList;
@@ -28,7 +30,19 @@ public class MainJobFragment extends Fragment {
         init(view);
         setList();
         setAdapter();
+        setItemClick();
         return view;
+    }
+
+    private void setItemClick() {
+        itemMainJobAdapter.setClick(new ItemOnClick() {
+            @Override
+            public void OnClick(int position, RecyclerView.ViewHolder holder) {
+                getFragmentManager().beginTransaction().replace(R.id.container,new MainJobDetailFragment(),"job details")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     private void setAdapter() {

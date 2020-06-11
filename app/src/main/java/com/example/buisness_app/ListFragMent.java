@@ -49,7 +49,7 @@ public class ListFragMent extends Fragment{
     private void setClick() {
         itemListAdapter.setClick(new ItemOnClick() {
             @Override
-            public void OnClick(int position, ItemListAdapter.ItemHolder holder) {
+            public void OnClick(int position, RecyclerView.ViewHolder holder) {
                 startActivity(new Intent(getActivity(),ItemDetailsActivity.class));
             }
         });

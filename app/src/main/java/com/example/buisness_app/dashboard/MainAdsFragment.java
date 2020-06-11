@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buisness_app.R;
 import com.example.buisness_app.adapter.ItemAdsAdapter;
+import com.example.buisness_app.adapter.ItemOnClick;
+import com.example.buisness_app.dashboard.subfragment.AdsDetailsFragment;
 import com.example.buisness_app.model.ItemAd;
 
 import java.util.ArrayList;
@@ -28,7 +30,19 @@ public class MainAdsFragment extends Fragment {
         init(view);
         setList();
         setAdapter();
+        setItemClick();
         return view;
+    }
+
+    private void setItemClick() {
+        itemAdsAdapter.setItemClick(new ItemOnClick() {
+            @Override
+            public void OnClick(int position, RecyclerView.ViewHolder holder) {
+                getFragmentManager().beginTransaction().replace(R.id.container,new AdsDetailsFragment(),"ads details")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
     }
 
     private void setAdapter() {

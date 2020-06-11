@@ -19,10 +19,14 @@ public class ItemAdsAdapter extends RecyclerView.Adapter<ItemAdsAdapter.ItemAdHo
 
     Context context;
     ArrayList<ItemAd> itemAdArrayList;
+    ItemOnClick itemOnClick;
 
     public ItemAdsAdapter(Context context, ArrayList<ItemAd> itemAdArrayList) {
         this.context = context;
         this.itemAdArrayList = itemAdArrayList;
+    }
+    public void setItemClick(ItemOnClick itemClick){
+        this.itemOnClick=itemClick;
     }
 
     @NonNull
@@ -33,12 +37,18 @@ public class ItemAdsAdapter extends RecyclerView.Adapter<ItemAdsAdapter.ItemAdHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemAdHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ItemAdHolder holder, final int position) {
     ItemAd itemAd=itemAdArrayList.get(position);
     holder.tvAdsTitle.setText(itemAd.getAdsTitle());
     holder.tvAdsDescription.setText(itemAd.getAdsDescription());
     holder.tvAdBy.setText(itemAd.getAdsBy());
     holder.ivAds.setImageResource(itemAd.getImgId());
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            itemOnClick.OnClick(position,holder);
+        }
+    });
     }
 
     @Override
