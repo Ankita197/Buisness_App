@@ -71,10 +71,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         mapFragment.onResume();
         MapsInitializer.initialize(getActivity());
         if (mapFragment != null) {
-            Log.d("___@___", "this is not null");
             setCallBack();
-        } else {
-            Log.d("___@___", "this is null");
         }
     }
 

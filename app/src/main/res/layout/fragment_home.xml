@@ -38,7 +38,7 @@
         android:layout_marginTop="20dp"
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="260dp"
         app:col="4"
         app:row="3"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,10 +48,10 @@
 
     <LinearLayout
         android:id="@+id/layout_dot"
-        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:gravity="center"
+        android:layout_marginBottom="30dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

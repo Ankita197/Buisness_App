@@ -51,7 +51,6 @@ public class HomeFragment extends Fragment {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Log.d("___@___",""+position);
 
             }
 
@@ -79,9 +78,44 @@ public class HomeFragment extends Fragment {
     }
 
     private void addItemInList() {
-        for (int i=0;i<26;i++) {
-            itemFunctionArrayList.add(new DataItem("" + i, R.drawable.chate_icon,String.valueOf((char) (65+i))));
-        }
+
+        itemFunctionArrayList.add(new DataItem("1", R.drawable.allcatagories,"All Catagories"));
+        itemFunctionArrayList.add(new DataItem("2", R.drawable.b2b,"B2b"));
+        itemFunctionArrayList.add(new DataItem("3", R.drawable.shopping,"Shopping"));
+        itemFunctionArrayList.add(new DataItem("4", R.drawable.daily_needs,"Daily needs"));
+        itemFunctionArrayList.add(new DataItem("5", R.drawable.restrurent,"restruant"));
+        itemFunctionArrayList.add(new DataItem("6", R.drawable.diagnostic,"Diagnostic Center"));
+        itemFunctionArrayList.add(new DataItem("7", R.drawable.virus,"Virus"));
+        itemFunctionArrayList.add(new DataItem("8", R.drawable.aurvadicdoctor,"Doctor"));
+        itemFunctionArrayList.add(new DataItem("9", R.drawable.movies,"Movies"));
+        itemFunctionArrayList.add(new DataItem("10", R.drawable.repairs,"Repair"));
+        itemFunctionArrayList.add(new DataItem("11", R.drawable.bill,"Recharge"));
+        itemFunctionArrayList.add(new DataItem("12", R.drawable.travell,"Travelling"));
+        itemFunctionArrayList.add(new DataItem("13", R.drawable.astrology,"Astrologers"));
+        itemFunctionArrayList.add(new DataItem("14", R.drawable.automobile,"Automobiles"));
+        itemFunctionArrayList.add(new DataItem("15", R.drawable.aurvadicdoctor,"Aurvadic Doctors"));
+        itemFunctionArrayList.add(new DataItem("16", R.drawable.babycare,"Baby Care Center"));
+        itemFunctionArrayList.add(new DataItem("17", R.drawable.beauty,"Beauty"));
+        itemFunctionArrayList.add(new DataItem("18", R.drawable.bone_doctor,"Bone"));
+        itemFunctionArrayList.add(new DataItem("19", R.drawable.borewell_constructor,"Borewell Constructor"));
+        itemFunctionArrayList.add(new DataItem("20", R.drawable.builder,"Builder& Constructor"));
+        itemFunctionArrayList.add(new DataItem("21", R.drawable.chate_icon,"message& Services"));
+        itemFunctionArrayList.add(new DataItem("22", R.drawable.cake_shop,"Cake Shop"));
+        itemFunctionArrayList.add(new DataItem("23", R.drawable.cardiologist,"Cardiologist"));
+        itemFunctionArrayList.add(new DataItem("24", R.drawable.person,"Charter Accountant"));
+        itemFunctionArrayList.add(new DataItem("25", R.drawable.child_specialist_doctor,"Child Specialist"));
+        itemFunctionArrayList.add(new DataItem("26", R.drawable.courier_services,"Courier Service"));
+        itemFunctionArrayList.add(new DataItem("27", R.drawable.crane_services,"Crane Service"));
+        itemFunctionArrayList.add(new DataItem("28", R.drawable.cricket,"Cricket"));
+        itemFunctionArrayList.add(new DataItem("29", R.drawable.dthprovider,"DTH providers"));
+        itemFunctionArrayList.add(new DataItem("30", R.drawable.dance_class,"Dance Classes"));
+        itemFunctionArrayList.add(new DataItem("31", R.drawable.dentist,"Dentist"));
+        itemFunctionArrayList.add(new DataItem("32", R.drawable.diabetologist,"Diabetologist"));
+        itemFunctionArrayList.add(new DataItem("33", R.drawable.diatician,"Dietitians"));
+        itemFunctionArrayList.add(new DataItem("34", R.drawable.aurvadicdoctor,"ENT Doctors"));
+        itemFunctionArrayList.add(new DataItem("35", R.drawable.education_training,"Education & Trainings"));
+        itemFunctionArrayList.add(new DataItem("36", R.drawable.electrical_goods,"Electronic Gooda"));
+
     }
 
     private void init(View view) {
