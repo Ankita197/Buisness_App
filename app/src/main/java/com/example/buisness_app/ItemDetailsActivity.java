@@ -56,7 +56,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
         for (int i = 0; i < dot.length; i++) {;
             dot[i] = new TextView(this);
             dot[i].setText(Html.fromHtml("&#9679;"));
-            dot[i].setTextSize(15);
+            dot[i].setTextSize(8);
             dot[i].setPadding(0,0,10,0);
             dot[i].setTextColor(getResources().getColor(R.color.colorGray));
             linearLayout.addView(dot[i]);

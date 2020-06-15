@@ -2,7 +2,6 @@ package com.example.buisness_app.dashboard;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
    private BottomNavigationView bottomNavigationView;
    private Fragment fragment;
+   private int mSelectedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,23 +21,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigationView=findViewById(R.id.bottomNavigation);
         setClickOfBottomBar();
-        fragment=new HomeFragment();
-        switchFragment(new HomeFragment(),"home fragment");
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,new HomeFragment(),"home fragment")
+                .addToBackStack("home fragment").commit();
+
     }
 
     private void switchFragment(Fragment fragment, String home_fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment,home_fragment).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment,home_fragment).commit();
     }
 
     private void setClickOfBottomBar() {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                mSelectedItem=menuItem.getItemId();
                 switch (menuItem.getItemId()){
                     case R.id.page_1:
-                        fragment=new HomeFragment();
-                        switchFragment(new HomeFragment(),"home Fragment");
-                        return true;
+                       switchFragment(new HomeFragment(),"home fragment");
+                       return true;
                     case R.id.page_2:
                         fragment=new MainJobFragment();
                         switchFragment(new MainJobFragment(),"MainJob Fragment");
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         switchFragment(new ProfileFragment(),"profile Fragment");
                         return true;
                 }
+
                 return false;
             }
         });
@@ -58,7 +60,31 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-       super.onBackPressed();
+        int fragments = getSupportFragmentManager().getBackStackEntryCount();
 
+
+        if (fragments == 1) {
+            finish();
+        } else {
+            if (getFragmentManager().getBackStackEntryCount() > 1) {
+                getFragmentManager().popBackStack();
+            } else {
+                super.onBackPressed();
+            }
+        }
     }
+
+    private void selectHome() {
+        MenuItem homeItem = bottomNavigationView.getMenu().getItem(0);
+        if (mSelectedItem != homeItem.getItemId()) {
+
+            switchFragment(new HomeFragment(),"home Fragment");
+
+            // Select home item
+            bottomNavigationView.setSelectedItemId(homeItem.getItemId());
+        } else {
+            super.onBackPressed();
+        }
+    }
+
 }

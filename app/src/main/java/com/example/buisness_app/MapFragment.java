@@ -36,7 +36,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
     MapView mapFragment;
     TextView tvShowList;
-    View view;
+    View view,viewList;
     ArrayList<ItemList> itemListArrayList = new ArrayList<>();
     BottomSheetBehavior behavior;
     private LinearLayout bottomSheet;
@@ -81,6 +81,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         bottomSheet = view.findViewById(R.id.bottomSheet);
         behavior = BottomSheetBehavior.from(bottomSheet);
         rvItemList = view.findViewById(R.id.rvItemList);
+        viewList=view.findViewById(R.id.viewList);
     }
 
     private void setAdapter() {
@@ -118,6 +119,12 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 behavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
 
 
+            }
+        });
+        viewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                behavior.setState(BottomSheetBehavior.STATE_HALF_EXPANDED);
             }
         });
     }

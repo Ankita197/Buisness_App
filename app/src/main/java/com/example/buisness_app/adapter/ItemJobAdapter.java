@@ -4,21 +4,23 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.buisness_app.R;
+import com.example.buisness_app.model.ItemJob;
 
 import java.util.ArrayList;
 
 public class ItemJobAdapter extends RecyclerView.Adapter<ItemJobAdapter.ItemJobHolder> {
 
     private Context context;
-    private ArrayList<String> listItemJob;
+    private ArrayList<ItemJob> listItemJob;
 
-    public ItemJobAdapter(Context context, ArrayList<String> listItemJob) {
+    public ItemJobAdapter(Context context, ArrayList<ItemJob> listItemJob) {
         this.context = context;
         this.listItemJob = listItemJob;
     }
@@ -32,7 +34,9 @@ public class ItemJobAdapter extends RecyclerView.Adapter<ItemJobAdapter.ItemJobH
 
     @Override
     public void onBindViewHolder(@NonNull ItemJobHolder holder, int position) {
-        holder.tvJobs.setText(listItemJob.get(position));
+        ItemJob itemJob=listItemJob.get(position);
+        holder.ivJobs.setImageResource(itemJob.getImgId());
+        holder.tvJobs.setText(itemJob.getJobType());
     }
 
     @Override
@@ -41,10 +45,12 @@ public class ItemJobAdapter extends RecyclerView.Adapter<ItemJobAdapter.ItemJobH
     }
 
     public class ItemJobHolder extends RecyclerView.ViewHolder {
+        ImageView ivJobs;
         TextView tvJobs;
         public ItemJobHolder(@NonNull View itemView) {
             super(itemView);
             tvJobs=itemView.findViewById(R.id.tvJob);
+            ivJobs=itemView.findViewById(R.id.ivJob);
         }
     }
 }

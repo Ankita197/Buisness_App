@@ -3,21 +3,21 @@
     <item
         android:id="@+id/page_1"
         android:enabled="true"
-        android:icon="@drawable/chate_icon"
+        android:icon="@drawable/tv"
         android:title="home"/>
     <item
         android:id="@+id/page_2"
         android:enabled="true"
-        android:icon="@drawable/share_icon"
+        android:icon="@drawable/account_icon"
         android:title="jobs"/>
     <item
         android:id="@+id/page_3"
         android:enabled="true"
-        android:icon="@drawable/chate_icon"
+        android:icon="@drawable/accountant_job"
         android:title="ads"/>
     <item
         android:id="@+id/page_4"
         android:enabled="true"
-        android:icon="@drawable/share_icon"
+        android:icon="@drawable/profiles_icon"
         android:title="profile"/>
 </menu>
